@@ -36,8 +36,8 @@ export const removeTask = async (req, res) => {
 // GET: /api/tasks
 export const loadTasks = async (req, res) => {
     const userId = decodeToken(req.cookies.token);
-    
-    // console.log(userId);
+    console.log("ABC:");
+    console.log(userId);
 
     if (!userId) return res.status(401).json({ error: "Missing or invalid token" });
 
