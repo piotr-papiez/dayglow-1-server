@@ -6,7 +6,7 @@ const router = Router();
 
 router.delete("/remove-task", removeTask);
 
-router.get("/tasks", loadTasks);
+router.post("/tasks", loadTasks);
 
 router.post("/create-task", createTask);
 
