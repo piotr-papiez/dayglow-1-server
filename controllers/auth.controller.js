@@ -62,11 +62,11 @@ export const login = async (req, res) => {
         );
 
         res.cookie("token", token, {
-            httpOnly: true,
-            secure: true,
-            sameSite: "none",
-            domain: "dayglow-1.onrender.com",
-            path: "/"
+            // httpOnly: true,
+            // secure: true,
+            // sameSite: "none",
+            domain: ".onrender.com",
+            // path: "/"
         });
 
         res.status(200).json({ message: "User successfully logged in" });
