@@ -62,10 +62,10 @@ export const login = async (req, res) => {
         );
 
         res.cookie("token", token, {
-            // httpOnly: true,
-            secure: true,
+            httpOnly: true,
             sameSite: "none",
-            // domain: ".onrender.com",
+            secure: true,
+            domain: ".onrender.com",
             path: "/"
         });
 
