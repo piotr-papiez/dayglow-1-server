@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: "https://dayglow-1-client.vercel.app",
+    origin: "https://dayglow-1.onrender.com",
     credentials: true
 }));
 
