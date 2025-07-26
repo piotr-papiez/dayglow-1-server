@@ -61,12 +61,13 @@ export const login = async (req, res) => {
             process.env.JWT_SECRET,
         );
 
-        res.cookie("token", token, {
-            secure: true,
-            sameSite: "none",
-            domain: ".onrender.com",
-            path: "/"
-        });
+        // res.cookie("token", token, {
+        //     secure: true,
+        //     sameSite: "none",
+        //     domain: ".onrender.com",
+        //     path: "/"
+        // });
+        res.json(token);
 
         res.status(200).json({ message: "User successfully logged in" });
     } catch {
