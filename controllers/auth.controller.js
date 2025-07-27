@@ -62,8 +62,11 @@ export const login = async (req, res) => {
         );
 
         res.cookie("token", token, {
+            httpOnly: true,
+            secure: true,
             sameSite: "none",
-            secure: true
+            domain: ".onrender.com",
+            path: "/"
         });
 
         res.status(200).json({ message: "User successfully logged in" });
