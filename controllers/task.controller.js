@@ -8,6 +8,7 @@ import { taskValidator } from "../validators/task.validator.js";
 
 // Models
 import Task from "../models/task.model.js";
+import User from "../models/user.model.js";
 
 // DELETE: /api/remove-task
 export const removeTask = async (req, res) => {
@@ -43,8 +44,9 @@ export const loadTasks = async (req, res) => {
 
     try {
         const tasks = await Task.find({ userId: new Types.ObjectId(userId) });
+        const { name } = await User.findById(userId, "name");
 
-        res.status(200).json(tasks);
+        res.status(200).json({ tasks, name });
     } catch (error) {
         res.status(500).json({ error: "Server error while loading tasks" });
     }
